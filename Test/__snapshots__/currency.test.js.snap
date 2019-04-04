@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Currency Component component 1`] = `
+<div
+  style={
+    Object {
+      "float": "left",
+      "marginTop": "10%",
+      "width": "50%",
+    }
+  }
+>
+  <div
+    className="currency"
+  >
+    <label
+      className="currencyLabel"
+    />
+    <br />
+    <select
+      className="selectCurrency"
+      onChange={[Function]}
+    >
+      <option
+        value=""
+      >
+        Choose From Below Currency Code
+      </option>
+    </select>
+    <br />
+    <input
+      className="inputForCurrencyValues"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`Currency Component component matches to snapshot 1`] = `
+<div
+  style={
+    Object {
+      "float": "left",
+      "marginTop": "10%",
+      "width": "50%",
+    }
+  }
+>
+  <div
+    className="currency"
+  >
+    <label
+      className="currencyLabel"
+    />
+    <br />
+    <select
+      className="selectCurrency"
+      onChange={[Function]}
+    >
+      <option
+        value=""
+      >
+        Choose From Below Currency Code
+      </option>
+    </select>
+    <br />
+    <input
+      className="inputForCurrencyValues"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+</div>
+`;
