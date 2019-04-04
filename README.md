@@ -10,4 +10,4 @@
     * Feel free to use a pre-processed language like SASS or LESS
 
 ### Design Requirements
-Convert one currency into another, both currencies should be selectable by user. Design and implementation is up to you, have fun!
+Convert one currency into another, both currencies should be selectable by user. Design and implementation is up to you, have fun!!
