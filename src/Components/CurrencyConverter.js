@@ -8,6 +8,7 @@ class CurrencyConverter extends Component{
         this.updateSelectOptionForBaseCurrency = this.updateSelectOptionForBaseCurrency.bind(this);
         this.updateConvertedCurrencyMoneyValue = this.updateConvertedCurrencyMoneyValue.bind(this);
         this.updateSelectOptionForSecondaryCurreny = this.updateSelectOptionForSecondaryCurreny.bind(this);
+        this.updateHeader = this.updateHeader.bind(this);
         this.state={
             initialBaseCurrenciesAndMoneyValues:null,
             initialConvertedCurrenciesAndMoneyValues:null,
@@ -34,6 +35,7 @@ class CurrencyConverter extends Component{
                 })
         }).catch(error => console.log('Error=>'+error.message))
     }
+
 
     // called when the base currency code is selected or changed
     updateSelectOptionForBaseCurrency(val){
@@ -65,7 +67,7 @@ class CurrencyConverter extends Component{
     //called when the converted currency code is selected or changed
     updateSelectOptionForSecondaryCurreny(val){
         var currencyCodeAndValue = this.state.initialBaseCurrenciesAndMoneyValues;
-        var baseCurrencyMoneyValue =  this.state.baseCurrencyMoneyValue
+        var baseCurrencyMoneyValue =  this.state.baseCurrencyMoneyValue;
         for(var i=0;i<currencyCodeAndValue.length;i++){
             var item = currencyCodeAndValue[i];
             if(item[0] === val){
@@ -75,7 +77,7 @@ class CurrencyConverter extends Component{
                     convertedMoney:parseFloat(item[1]),
                     convertedCurrencyDefaultIdx: i,
                     convertedMoneyValueUpdatedFirstTime:false
-                })
+                },  this.updateHeader(this.state.baseCurrency, val))
                 break;
             }
         }
@@ -84,6 +86,7 @@ class CurrencyConverter extends Component{
     // Called to update the existing converted Currency & Money value when the base currency changes
     updateConvertedCurrencyValue(){
         var baseMoneyValue = this.state.baseCurrencyMoneyValue;
+        this.updateHeader(this.state.baseCurrency, this.state.convertedCurrency)
         this.state.initialBaseCurrenciesAndMoneyValues.map((currencyAndMoneyValues)=>{
             if(this.state.convertedCurrency === currencyAndMoneyValues[0] ){
                 this.setState({
@@ -110,7 +113,6 @@ class CurrencyConverter extends Component{
             })
         }
     }
-
 
     //Called to change the base currency money value when the converted currency money value changes
     updateBaseCurrencyMoneyValue(val){
@@ -160,6 +162,11 @@ class CurrencyConverter extends Component{
             })
         }
 
+    }
+
+    updateHeader(bCur,cCur){
+        console.log(this.state);
+        this.props.changeInCurrencyCode(bCur,cCur)
     }
 
     render(){
