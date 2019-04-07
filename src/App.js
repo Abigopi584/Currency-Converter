@@ -22,7 +22,6 @@ class App extends Component {
   }
 
   render() {
-      console.log(this.state)
     return (
       <div className="App">
         <Header bCur={this.state.baseCurrency} cCur={this.state.convertedCurrency}/>
